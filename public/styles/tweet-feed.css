@@ -6,7 +6,11 @@ article.tweet {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 5em;
+  height: 6em;
+}
+article.tweet:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    transition: box-shadow .3s;
 }
 
 .tweet-user {
@@ -26,10 +30,33 @@ article.tweet {
 .photo-name {
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+.tweet-message {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px; 
+  padding-bottom: 10px;
+}
+.line {
+  border-bottom: solid ;
+  border-color: #c5daff;
+  padding: 5px 5px;
+  width: 100%;
+}
+
 .date {
   font-family: 'Source Sans Pro', sans-serif;
 }
-
+.flag:hover {
+  color: blue;
+}
+.retweet:hover {
+  color: blue;
+}
+.heart-like:hover {
+  color: blue;
+}
 
 .date-icons {
   display: flex;

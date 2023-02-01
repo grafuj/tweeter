@@ -16,9 +16,10 @@ textarea {
   border-bottom: solid;
   border-radius: 6px;
   resize: none;
-  height: 50px;
+  height: 85px;
   background-color: rgb(255, 255, 255);
-  color: #c5daff;
+  border-color: #c5daff;
+  color: #545149;
 }
 button {
   color: #c5daff;
