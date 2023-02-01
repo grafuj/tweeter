@@ -23,6 +23,7 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,10 +71,26 @@
 
         <div class="under-tweet">
           <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+          <output name="counter" class="counter" id="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
+    <article>
+      <header>
+        <a>Photo</a>
+        <a>Name</a>
+        <a>@handle</a>
+
+      </header>
+      <footer>
+        <a>10 days ago</a>
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
+        <i class="fa-solid fa-heart"></i>
+
+      </footer>
+
+    </article>
   </main>
 </body>
 
