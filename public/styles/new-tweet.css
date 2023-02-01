@@ -11,17 +11,14 @@ form {
   justify-content: center;
   width: 100%
 }
-
 textarea {
   border: 0;
   border-bottom: solid;
   border-radius: 6px;
   resize: none;
   height: 50px;
-  background-color: rgb(44, 37, 25);
+  background-color: rgb(255, 255, 255);
   color: #c5daff;
-
-
 }
 button {
   color: #c5daff;
