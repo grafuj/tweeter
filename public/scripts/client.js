@@ -1,27 +1,17 @@
-
 $(document).ready(() => {
-  $("#null").slideUp(0)
-  $("#tooLong").slideUp(0)
-  $("#tooShort").slideUp(0)
-  /*
-   * Client-side JS logic goes here
-   * jQuery is already loaded
-   * Reminder: Use (and do all your DOM work in) jQuery's document ready function
-   */
-  //example data
+  $("#null").slideUp(0);
+  $("#tooLong").slideUp(0);
+  $("#tooShort").slideUp(0);
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  
-// {/* <script>alert("o")</script>   */}
 
   const createTweetElement = (tweetObj) => {
     let $tweet = tweetObj;
 
-    /* Your code for creating the tweet element */
     let returnTempLit = `
     <article class="tweet">
     <div class="tweet-user">
@@ -52,10 +42,10 @@ $(document).ready(() => {
     return returnTempLit;
   };
 
+  /*empties feed, calls createTweetElement for each tweet, adds to top of feed */
   const renderTweets = (arrayOfTweetObjects) => {
     $('#tweets-container').empty();
     for (let obj of arrayOfTweetObjects) {
-      // calls createTweetElement for each tweet
       let newTweet = createTweetElement(obj);
       $('#tweets-container').prepend(newTweet);
     }
@@ -64,39 +54,36 @@ $(document).ready(() => {
   const $form = $('#post-tweet');
   $form.submit((event) => {
     event.preventDefault();
-    const data = $form.serializeArray(); //returns a string that starts with name=
+    const data = $form.serializeArray();
     let tweetText = data[0].value;
 
+    if (tweetText.length < 1) {
+      $("#tooShort").slideDown();
+      return;
+    }
     if (!tweetText) {
-      $("#null").slideDown()
+      $("#null").slideDown();
       return;
     }
     if (tweetText.length > 140) {
-      $("#tooLong").slideDown()
+      $("#tooLong").slideDown();
       return;
     }
-    if (tweetText.length < 1) {
-      $("#tooShort").slideDown()
-      return;
-    }
-    
-    //send AJAX post request
+
+    /* this actually sends the AJAX request to the database, the callback wants all error messages hidden by default, loads the tweets then clears the entry fields */
     $.post($form.attr('action'), data, (res) => {
       console.log(res);
-      $("#null").slideUp()
-      $("#tooLong").slideUp()
-      $("#tooShort").slideUp()
+      $("#null").slideUp();
+      $("#tooLong").slideUp();
+      $("#tooShort").slideUp();
 
       loadTweets();
-      $("#tweet-text").val(""); //reset to blanks
+      $("#tweet-text").val("");
       $(".counter").val("140");
     });
   });
 
   const loadTweets = () => {
-    // $.get($form.attr('action'), data, (res) => {
-
-
     $.get("http://localhost:8080/tweets", (data) => {
       console.log('data:', data);
       renderTweets(data);
@@ -104,5 +91,4 @@ $(document).ready(() => {
   };
 
   loadTweets();
-
 });

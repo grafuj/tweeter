@@ -17,8 +17,6 @@ span {
 nav-newtweet {
   display: flex;
   flex-direction: column;
-  /* padding: 1.5em; */
-  /* justify-content: center; */
 }
 
 nav-NTicon {

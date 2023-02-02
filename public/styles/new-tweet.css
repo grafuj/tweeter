@@ -29,7 +29,6 @@ button {
   color: #c5daff;
   background-color: cornflowerblue;
   font-family: 'Bungee', cursive;
-  /* padding: 20px; */
   text-align: center;
   border-radius: 6px;
 }
@@ -47,14 +46,12 @@ button {
 }
 
 .error-hidden {
-  /* display: none; */
   color: red;
   border: 3px solid red;
   display: flex;
   border-radius: 6px;
   justify-content: space-evenly;
 }
-
 /* desktop Styles */
 @media only screen and (min-width: 1024px) {
   header {
@@ -71,6 +68,6 @@ button {
     margin-top: 4em;
   }
   nav {
-    background-color: #a2b0ff ;
+    background-color: #c5daff ;
   }
 }
