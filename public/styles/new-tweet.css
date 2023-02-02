@@ -11,7 +11,8 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%
+  width: 100%;
+  margin-top: 1em;
 }
 
 textarea {
@@ -23,6 +24,7 @@ textarea {
   background-color: rgb(255, 255, 255);
   border-color: #c5daff;
   color: #545149;
+  margin-top: 3px;
 }
 
 button {
