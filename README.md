@@ -14,10 +14,10 @@ This repository is the starter code for a Lighthouse Labs project: Students will
 
 ## Dependencies
 
+Read more about the dependencies in the [`package.json`](https://github.com/grafuj/tweeter/blob/master/package.json).
 - Express
 - Node 5.10.x or above
 - timeago.js
-- Read about more of the dependencies in the [`package.json`](https://github.com/grafuj/tweeter/blob/master/package.json).
 
 ## Screenshots
 
