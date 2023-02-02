@@ -26,7 +26,7 @@ $(document).ready(() => {
     <article class="tweet">
     <div class="tweet-user">
     <span class="photo-name">
-      <a>${$tweet.user.avatars}</a>
+      <img src="${$tweet.user.avatars}">
       <a>${$tweet.user.name}</a>
     </span>
     <a>${$tweet.user.handle}</a>
@@ -53,6 +53,7 @@ $(document).ready(() => {
   };
 
   const renderTweets = (arrayOfTweetObjects) => {
+    $('#tweets-container').empty();
     for (let obj of arrayOfTweetObjects) {
       // calls createTweetElement for each tweet
       let newTweet = createTweetElement(obj);
@@ -94,6 +95,7 @@ $(document).ready(() => {
 
   const loadTweets = () => {
     // $.get($form.attr('action'), data, (res) => {
+
 
     $.get("http://localhost:8080/tweets", (data) => {
       console.log('data:', data);

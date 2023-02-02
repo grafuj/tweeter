@@ -6,7 +6,6 @@ article.tweet {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 6em;
   margin-top: 12px;
 }
 article.tweet:hover {
@@ -30,6 +29,11 @@ article.tweet:hover {
 
 .photo-name {
   font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  align-items: center;
+}
+.photo-name > a {
+  padding-left: 10px;
 }
 
 .tweet-message {
